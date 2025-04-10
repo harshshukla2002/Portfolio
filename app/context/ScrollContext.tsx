@@ -1,16 +1,30 @@
 "use client";
 
-import { createContext, useRef, useContext } from "react";
+import { createContext, useRef, useContext, RefObject } from "react";
 
-const ScrollContext = createContext(undefined);
+export type ScrollContextType = {
+  homeRef: RefObject<HTMLElement | null>;
+  aboutRef: RefObject<HTMLElement | null>;
+  contactRef: RefObject<HTMLElement | null>;
+  experienceRef: RefObject<HTMLElement | null>;
+  projectsRef: RefObject<HTMLElement | null>;
+  skillsRef: RefObject<HTMLElement | null>;
+  scrollTo: (ref: RefObject<HTMLElement | null>) => void;
+};
+
+const ScrollContext = createContext<ScrollContextType | undefined>(undefined);
 
 export const ScrollProvider = ({ children }: any) => {
-  const homeRef = useRef(null);
-  const aboutRef = useRef(null);
-  const experienceRef = useRef(null);
-  const projectsRef = useRef(null);
-  const skillsRef = useRef(null);
-  const contactRef = useRef(null);
+  const homeRef = useRef<HTMLElement>(null);
+  const aboutRef = useRef<HTMLElement>(null);
+  const contactRef = useRef<HTMLElement>(null);
+  const experienceRef = useRef<HTMLElement>(null);
+  const projectsRef = useRef<HTMLElement>(null);
+  const skillsRef = useRef<HTMLElement>(null);
+
+  const scrollTo = (ref: RefObject<HTMLElement | null>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <ScrollContext.Provider
@@ -21,6 +35,7 @@ export const ScrollProvider = ({ children }: any) => {
         experienceRef,
         projectsRef,
         skillsRef,
+        scrollTo,
       }}
     >
       {children}
@@ -28,4 +43,10 @@ export const ScrollProvider = ({ children }: any) => {
   );
 };
 
-export const useScroll = () => useContext(ScrollContext);
+export const useScroll = (): ScrollContextType => {
+  const context = useContext(ScrollContext);
+  if (!context) {
+    throw new Error("useScroll must be used within a ScrollProvider");
+  }
+  return context;
+};

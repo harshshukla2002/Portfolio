@@ -58,7 +58,7 @@ const Navbar = () => {
           <div className="flex gap-8 text-white text-xl">
             <p
               onClick={() =>
-                homeRef.current.scrollIntoView({ behavior: "smooth" })
+                homeRef.current!.scrollIntoView({ behavior: "smooth" })
               }
               className="cursor-pointer opacity-70 hover:opacity-100 transition-all"
             >
@@ -66,7 +66,7 @@ const Navbar = () => {
             </p>
             <p
               onClick={() =>
-                aboutRef.current.scrollIntoView({ behavior: "smooth" })
+                aboutRef.current!.scrollIntoView({ behavior: "smooth" })
               }
               className="cursor-pointer opacity-70 hover:opacity-100 transition-all"
             >
@@ -74,7 +74,7 @@ const Navbar = () => {
             </p>
             <p
               onClick={() =>
-                experienceRef.current.scrollIntoView({ behavior: "smooth" })
+                experienceRef.current!.scrollIntoView({ behavior: "smooth" })
               }
               className="cursor-pointer opacity-70 hover:opacity-100 transition-all"
             >
@@ -82,7 +82,7 @@ const Navbar = () => {
             </p>
             <p
               onClick={() =>
-                projectsRef.current.scrollIntoView({ behavior: "smooth" })
+                projectsRef.current!.scrollIntoView({ behavior: "smooth" })
               }
               className="cursor-pointer opacity-70 hover:opacity-100 transition-all"
             >
@@ -90,7 +90,7 @@ const Navbar = () => {
             </p>
             <p
               onClick={() =>
-                skillsRef.current.scrollIntoView({ behavior: "smooth" })
+                skillsRef.current!.scrollIntoView({ behavior: "smooth" })
               }
               className="cursor-pointer opacity-70 hover:opacity-100 transition-all"
             >
@@ -98,7 +98,7 @@ const Navbar = () => {
             </p>
             <p
               onClick={() =>
-                contactRef.current.scrollIntoView({ behavior: "smooth" })
+                contactRef.current!.scrollIntoView({ behavior: "smooth" })
               }
               className="cursor-pointer opacity-70 hover:opacity-100 transition-all"
             >

@@ -1,0 +1,46 @@
+.navbar {
+  padding: 0px 50px 0px 120px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  align-items: center;
+  font-size: 20px;
+  color: blue;
+  background: white;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+.space {
+  margin: 0px 30px;
+}
+
+.margin-class {
+  margin: 5px;
+}
+
+.online {
+  text-decoration: underline;
+}
+
+.nav-link {
+  transition: ease-in 0.1s;
+}
+
+.nav-link:hover {
+  border-bottom: 3px solid blue;
+}
+
+.margin-class {
+  border-bottom: none;
+}
+
+.gradient-font {
+  background: #121fcf;
+  background: linear-gradient(to right, #121fcf 0%, #cf1512 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

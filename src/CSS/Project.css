@@ -1,0 +1,32 @@
+#projects {
+  padding: 20px;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  margin-top: 40px;
+  padding-top: 90px;
+}
+
+.project-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 10px;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 1000px) {
+  .project-wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+}
+
+.live {
+  cursor: pointer;
+}
+
+.live:hover {
+  text-decoration: underline;
+}
