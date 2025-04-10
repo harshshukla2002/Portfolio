@@ -144,11 +144,46 @@ const Navbar = () => {
               <RxCross1 onClick={() => setOpen(false)} size={30} />
             </AlertDialogHeader>
             <div className="flex flex-col gap-5 text-xl justify-center items-center">
-              <p onClick={() => setOpen(false)}>Home</p>
-              <p onClick={() => setOpen(false)}>About</p>
-              <p onClick={() => setOpen(false)}>Skills</p>
-              <p onClick={() => setOpen(false)}>Projects</p>
-              <p onClick={() => setOpen(false)}>Contact</p>
+              <p
+                onClick={() => {
+                  homeRef.current!.scrollIntoView({ behavior: "smooth" });
+                  setOpen(false);
+                }}
+              >
+                Home
+              </p>
+              <p
+                onClick={() => {
+                  aboutRef.current!.scrollIntoView({ behavior: "smooth" });
+                  setOpen(false);
+                }}
+              >
+                About
+              </p>
+              <p
+                onClick={() => {
+                  skillsRef.current!.scrollIntoView({ behavior: "smooth" });
+                  setOpen(false);
+                }}
+              >
+                Skills
+              </p>
+              <p
+                onClick={() => {
+                  projectsRef.current!.scrollIntoView({ behavior: "smooth" });
+                  // setOpen(false);
+                }}
+              >
+                Projects
+              </p>
+              <p
+                onClick={() => {
+                  contactRef.current!.scrollIntoView({ behavior: "smooth" });
+                  setOpen(false);
+                }}
+              >
+                Contact
+              </p>
               <div className="flex gap-3 items-center">
                 <IoSunnyOutline size={22} />
                 <Switch onClick={toggleTheme} checked={theme === "dark"} />
