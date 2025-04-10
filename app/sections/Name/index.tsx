@@ -22,14 +22,14 @@ const Name = () => {
           flexWrap: width! > 1000 ? "nowrap" : "wrap",
         }}
       >
-        {/* <Image
+        <Image
           src="/images/myimage.jpeg"
           width={width! * 0.3}
           height={width! * 0}
           alt="harsh"
           style={{ background: "black" }}
           className="items-center rounded-full"
-        /> */}
+        />
         <div
           className=" flex flex-col gap-4"
           style={{ width: width! > 1000 ? "45%" : "90%" }}
