@@ -1,14 +1,22 @@
+"use client";
+
 import { COLORS } from "@/app/constants/Colors";
 import { useScroll } from "@/app/context/ScrollContext";
 import { useTheme } from "@/app/context/theme";
 import { useWidth } from "@/app/CustomHook/useWidth";
 import Image from "next/image";
 import React from "react";
+import { useLottie } from "lottie-react";
+import dynamic from "next/dynamic";
 
 const Name = () => {
   const { theme } = useTheme();
   const width = useWidth();
   const { homeRef: ref } = useScroll();
+
+  const LottiePlayer = dynamic(() => import("../../components/LottiePlayer"), {
+    ssr: false,
+  });
 
   return (
     <section ref={ref} id="home" className="scroll-mt-5">
@@ -22,14 +30,9 @@ const Name = () => {
           flexWrap: width! > 1000 ? "nowrap" : "wrap",
         }}
       >
-        <Image
-          src="/images/myimage.jpeg"
-          width={width! * 0.3}
-          height={width! * 0}
-          alt="harsh"
-          style={{ background: "black" }}
-          className="items-center rounded-full"
-        />
+        <div className="w-[100%] md:w-[50%]">
+          <LottiePlayer />
+        </div>
         <div
           className=" flex flex-col gap-4"
           style={{ width: width! > 1000 ? "45%" : "90%" }}
