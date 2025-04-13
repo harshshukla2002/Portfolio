@@ -16,6 +16,16 @@ import {
   AlertDialogHeader,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 
 import "./styles.css";
 import { useWidth } from "@/app/CustomHook/useWidth";
@@ -129,8 +139,8 @@ const Navbar = () => {
           </div>
         </>
       ) : (
-        <AlertDialog open={open}>
-          <AlertDialogTrigger>
+        <Drawer open={open}>
+          <DrawerTrigger>
             <Image
               src="/Images/menu.png"
               alt="hamburger"
@@ -138,52 +148,13 @@ const Navbar = () => {
               height={40}
               onClick={() => setOpen(true)}
             />
-          </AlertDialogTrigger>
-          <AlertDialogContent>
-            <AlertDialogHeader className="flex items-end">
+          </DrawerTrigger>
+
+          <DrawerContent>
+            <DrawerHeader className="flex items-end">
               <RxCross1 onClick={() => setOpen(false)} size={30} />
-            </AlertDialogHeader>
-            <div className="flex flex-col gap-5 text-xl justify-center items-center">
-              <p
-                onClick={() => {
-                  homeRef.current!.scrollIntoView({ behavior: "smooth" });
-                  setOpen(false);
-                }}
-              >
-                Home
-              </p>
-              <p
-                onClick={() => {
-                  aboutRef.current!.scrollIntoView({ behavior: "smooth" });
-                  setOpen(false);
-                }}
-              >
-                About
-              </p>
-              <p
-                onClick={() => {
-                  skillsRef.current!.scrollIntoView({ behavior: "smooth" });
-                  setOpen(false);
-                }}
-              >
-                Skills
-              </p>
-              <p
-                onClick={() => {
-                  projectsRef.current!.scrollIntoView({ behavior: "smooth" });
-                  // setOpen(false);
-                }}
-              >
-                Projects
-              </p>
-              <p
-                onClick={() => {
-                  contactRef.current!.scrollIntoView({ behavior: "smooth" });
-                  setOpen(false);
-                }}
-              >
-                Contact
-              </p>
+            </DrawerHeader>
+            <div className="flex flex-col gap-5 text-xl justify-center items-center mb-[5%]">
               <div className="flex gap-3 items-center">
                 <IoSunnyOutline size={22} />
                 <Switch onClick={toggleTheme} checked={theme === "dark"} />
@@ -205,8 +176,25 @@ const Navbar = () => {
                 </button>
               </a>
             </div>
-          </AlertDialogContent>
-        </AlertDialog>
+          </DrawerContent>
+        </Drawer>
+        // <AlertDialog open={open}>
+        //   <AlertDialogTrigger>
+        //     <Image
+        //       src="/Images/menu.png"
+        //       alt="hamburger"
+        //       width={40}
+        //       height={40}
+        //       onClick={() => setOpen(true)}
+        //     />
+        //   </AlertDialogTrigger>
+        //   <AlertDialogContent>
+        //     <AlertDialogHeader className="flex items-end">
+        //       <RxCross1 onClick={() => setOpen(false)} size={30} />
+        //     </AlertDialogHeader>
+
+        //   </AlertDialogContent>
+        // </AlertDialog>
       )}
     </div>
   );
