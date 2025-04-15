@@ -26,7 +26,7 @@ function Contact() {
           <p className="text-xl">+91 7898118805</p>
         </div>
         <div className="flex gap-2 items-center">
-          <Link href={""} target="_blank">
+          <Link href={"https://github.com/harshshukla2002"} target="_blank">
             <Image
               src={"https://www.svgrepo.com/show/475654/github-color.svg"}
               alt="github"
@@ -34,7 +34,10 @@ function Contact() {
               height={40}
             />
           </Link>
-          <Link href={""} target="_blank">
+          <Link
+            href={"https://www.linkedin.com/in/harsh-shukla12/"}
+            target="_blank"
+          >
             <Image
               src={
                 "https://static.vecteezy.com/system/resources/previews/023/986/926/non_2x/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png"
